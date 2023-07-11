@@ -140,7 +140,7 @@ class SupervisedTrainer(AbstractTrainer):
         return batch_equation_
 
     def _train_batch(self, batch):
-        batch_loss = self.model.calculate_loss(batch)
+        batch_loss, self.model_outputs = self.model.calculate_loss(batch)
         return batch_loss
 
     def _eval_batch(self, batch):
@@ -236,6 +236,9 @@ class SupervisedTrainer(AbstractTrainer):
                 self._save_checkpoint()
             if epo % 5 == 0:
                 self._save_checkpoint()
+        with open('asdasd.txt', 'a') as f:
+            f.write(self.model_outputs)
+        # print(self.model_outputs)
         self.logger.info('''training finished.
                             best valid result: equation accuracy [%2.3f] | value accuracy [%2.3f]
                             best test result : equation accuracy [%2.3f] | value accuracy [%2.3f]''' \

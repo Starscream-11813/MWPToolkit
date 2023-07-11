@@ -37,7 +37,7 @@ class BERTGen(nn.Module):
 
         # self.dataset = dataset
 
-        self.tokenizer = dataset.tokenizer
+        self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model_path)# dataset.tokenizer
 
         self.eos_token_id = self.tokenizer.sep_token_id
         self.eos_token = self.tokenizer.sep_token

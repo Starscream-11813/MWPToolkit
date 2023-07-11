@@ -24,6 +24,7 @@ def from_infix_to_postfix(expression):
             c = st.pop()
             while c != "(":
                 res.append(c)
+                # if len(st):
                 c = st.pop()
         elif e == "]":
             c = st.pop()

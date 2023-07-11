@@ -1,2 +1,0 @@
-recursive-include mwptoolkit/properties *
-include mwptoolkit/config/config.json

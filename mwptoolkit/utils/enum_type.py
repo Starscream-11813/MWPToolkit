@@ -49,6 +49,7 @@ class DatasetName:
     asdiv_a = "asdiv-a"
     mawps_single = "mawps-single"
     mawps_asdiv_a_svamp = "mawps_asdiv-a_svamp"
+    paramawps = "paramawps"
 
 
 class DatasetType:

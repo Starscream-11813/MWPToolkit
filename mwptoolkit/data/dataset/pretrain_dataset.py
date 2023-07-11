@@ -9,7 +9,7 @@ import warnings
 from logging import getLogger
 
 import torch
-from transformers import RobertaTokenizer, BertTokenizer
+from transformers import RobertaTokenizer, BertTokenizer, DebertaTokenizer
 
 from mwptoolkit.config.configuration import Config
 from mwptoolkit.data.dataset.abstract_dataset import AbstractDataset
@@ -229,6 +229,8 @@ class PretrainDataset(AbstractDataset):
             tokenizer = BertTokenizer.from_pretrained(self.pretrained_model_path)
         elif self.embedding == 'roberta':
             tokenizer = RobertaTokenizer.from_pretrained(self.pretrained_model_path)
+        elif self.embedding == 'deberta':
+            tokenizer = DebertaTokenizer.from_pretrained(self.pretrained_model_path)
         else:
             raise NotImplementedError
         if self.add_num_symbol:
